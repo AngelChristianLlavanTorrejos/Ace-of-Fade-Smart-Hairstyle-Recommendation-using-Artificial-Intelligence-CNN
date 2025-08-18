@@ -1,0 +1,1 @@
+export const clientSessionData = JSON.parse(localStorage.getItem('client-session')) || [];

@@ -1,0 +1,16 @@
+.nav-link {
+  transition: color 1s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: rgba(220, 53, 69, 0.8) !important;
+}
+
+.role {
+  font-size: 14px;
+}
+
+.client-table-head {
+  background-color: rgb(220, 53, 69) !important;
+}

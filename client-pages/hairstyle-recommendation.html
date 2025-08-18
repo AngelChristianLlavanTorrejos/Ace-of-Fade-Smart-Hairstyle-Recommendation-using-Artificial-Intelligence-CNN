@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ace of Fade Smart Hairtstyle Suggestion using Convultional Neural Networks for Facial Feature Matching</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../styles/client-styles/general.css">
+    <link rel="stylesheet" href="../styles/client-styles/recommendation.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row vh-100">
+        <!-- Side Navigation -->
+        <div class="col-3 shadow js-nav-container border"></div>
+        <!-- Main Content -->
+        <div class="col-9 p-0">
+          <!-- Header -->
+          <div class="shadow py-3 m-3 border rounded px-3 js-header-container"></div>
+          <!-- Haircut Recommendation Tool -->
+          <div class="border rounded shadow m-3 p-3">
+            <h6>Haircut Recommendation Tool</h6>
+            <!-- Guidelines -->
+            <div class="row">
+              <div class="col-6">
+                <p class="m-0">Guidelines</p>
+
+                <ol>
+                  <li>
+                    <img src="../images/guideline_icon1.png" class="css-guideline-icon">
+                    <span>Make sure your face is fully visible and well-lit. Avoid blurry or dark images that obscure facial features.</span>
+                  </li>
+                  <li>
+                    <img src="../images/guideline_icon2.png" class="css-guideline-icon">
+                    <span>Remove sunglasses, hats, masks, or any objects that cover your face to ensure full visibility.</span>
+                  </li>
+                  <li>
+                    <img src="../images/guideline_icon3.png" class="css-guideline-icon">
+                    <span>Face the camera directly with a straight-on view. Angled or side profiles may reduce accuracy.</span>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="col-6">
+                <div class="row text-center">
+                  <div class="col-6">
+                    <img src="../images/guideline-do.png" alt="" class="css-guideline-image">
+                  </div>
+
+                  <div class="col-6">
+                    <img src="../images/guideline-dont's.png" alt="" class="css-guideline-image">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- Capture and Upload Section -->
+            <div class="text-center p-5 m-5 border border-secondary js-upload-container">
+              <img src="../images/upload-icon.png" class="css-upload-icon js-uploaded-image">
+
+              <p class="text-secondary js-choose-option">Choose an option</p>
+
+              <input type="file" class="js-upload-image" accept="image/jpeg, image/png">
+
+              <button class="btn btn-primary js-start-camera">
+                <span>Camera</span>
+                <i class="bi bi-camera"></i>
+              </button>
+              <div class="mt-3">
+                <button class="js-upload-button btn btn-primary" style="width: 400px;" disabled>Upload File</button>
+              </div>
+            </div>
+            <!-- Camera Stream Section -->
+            <div class="text-center js-camera-container p-3 m-3 border border-secondary rounded" style="display: none;">
+              <div class="text-start">
+                <button class="btn btn-danger btn-sm js-back-button">
+                  <i class="bi bi-arrow-left"></i>
+                  <span>Back</span>
+                </button>
+              </div>
+            
+              <div class="text-center">
+                <video class="rounded js-video" width="480" height="360" autoplay style="transform: scaleX(-1);"></video>
+              </div>
+              <button class="btn btn-primary js-capture-button" style="width: 480px;">
+                <span>Capture</span>
+                <i class="bi bi-camera"></i>
+              </button>
+              <canvas class="js-canvas" width="128" height="128" style="display:none;"></canvas>
+            </div>
+
+            <!-- Hairstyle Recommendation Result -->
+            <div class="border border-secondary p-3 m-3 js-recommendation-result" style="display: none;">
+              <h6>Hairstyle Recommendation Result</h6>
+              <div class="row">
+                <div class="col-6">
+                  <p class="m-0 bg-dark rounded text-light text-center py-1">Face Shape</p>
+                  <img src="../images/faceshape/square.png" style="width: 100%;" class="border border-secondary p-1 rounded js-face-shape-result">
+                </div>
+
+                <div class="col-6">
+                  <p class="m-0 bg-dark rounded text-light text-center py-1">Hairstyle</p>
+                  <div class="row text-center border py-1 mx-1 rounded border-secondary">
+                    <div class="col-6 mt-1">
+                      <img src="../images/hairstyles/square/1.png" style="width: 74%;" class="border border-secondary p-1 rounded js-hairstyle-result">
+                    </div>
+                    <div class="col-6 mt-1">
+                      <img src="../images/hairstyles/square/2.png" style="width: 74%;" class="border border-secondary p-1 rounded js-hairstyle-result">
+                    </div>
+                    <div class="col-6 mt-1">
+                      <img src="../images/hairstyles/square/3.png" style="width: 74%;" class="border border-secondary p-1 rounded js-hairstyle-result">
+                    </div>
+                    <div class="col-6 mt-1 mb-1">
+                      <img src="../images/hairstyles/square/4.png" style="width: 74%;" class="border border-secondary p-1 rounded js-hairstyle-result">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="module" src="../scripts/main/client-main/recommendation-main.js"></script>
+  </body>
+</html>
