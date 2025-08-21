@@ -165,6 +165,7 @@ export class AppointmentsView {
             cell.classList.add('text-warning');
             break;
         case 'Approved':
+        case 'Completed':
             cell.classList.add('text-success');
             break;
         case 'Rejected':

@@ -1,6 +1,6 @@
 export class AppointmentView {
   constructor () {
-    this.appointmentStatusData = ['All', 'Approved', 'Rejected', 'Pending', 'Notice For Reschedule', 'Cancelled'];
+    this.appointmentStatusData = ['All', 'Approved', 'Rejected', 'Pending', 'Notice For Reschedule', 'Cancelled', 'Completed'];
 
     this.appointmentStatusContainer = document.querySelector('.js-appointment-status');
 
@@ -68,7 +68,7 @@ export class AppointmentView {
         if (value === 'Pending') {
           cell.className = 'text-warning';
         }
-        else if (value === 'Approved') {
+        else if (value === 'Approved' || value === 'Completed') {
           cell.className = 'text-success';
         }
         else if (value === 'Cancelled' || value === 'Rejected' || value === 'Notice For Reschedule') {
@@ -89,7 +89,7 @@ export class AppointmentView {
         button.setAttribute('data-bs-toggle', 'modal');
         button.setAttribute('data-bs-target', `#appointment-id-${appointment.id}`);
 
-        if (appointment.status !== 'Pending') {
+        if (appointment.status !== 'Pending' && appointment.status !== 'Approved') {
           button.disabled = true;
         }
 
@@ -158,13 +158,14 @@ export class AppointmentView {
                     <option value="3">Pending</option>
                     <option value="4">Notice For Reschedule</option>
                     <option value="5">Cancelled</option>
+                    <option value="6">Completed</option>
                   </select>
                 </form>
               </div>
               <div class="js-update-appointment-result-${appointment.id}"></div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="js-update-appointment-button btn btn-success" data-appointment-id="${appointment.id}">Save changes</button>
+                <button type="button" class="js-update-appointment-button btn btn-success" data-appointment-id="${appointment.id}" data-appointment-client="${appointment.clientId}" data-appointment-barber="${appointment.barberId}">Save changes</button>
               </div>
             </div>
           </div>
@@ -181,6 +182,8 @@ export class AppointmentView {
     updateAppointmentButton.forEach(button => {
       button.addEventListener('click', () => {
         const appointmentId = button.dataset.appointmentId;
+        const clientId = button.dataset.appointmentClient;
+        const barberId = button.dataset.appointmentBarber;
 
         const updateForm = document.querySelector(`.js-update-form-${appointmentId}`)
         
@@ -191,7 +194,12 @@ export class AppointmentView {
           statusId: newStatusId
         };
 
-        callback(appointmentId, updatedStatus);
+        const reviewData = {
+          clientId,
+          barberId
+        }
+
+        callback(appointmentId, updatedStatus, reviewData);
       })
     })
   }
