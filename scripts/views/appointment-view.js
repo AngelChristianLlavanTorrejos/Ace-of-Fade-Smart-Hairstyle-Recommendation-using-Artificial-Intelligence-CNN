@@ -165,7 +165,7 @@ export class AppointmentView {
               <div class="js-update-appointment-result-${appointment.id}"></div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="js-update-appointment-button btn btn-success" data-appointment-id="${appointment.id}" data-appointment-client="${appointment.clientId}" data-appointment-barber="${appointment.barberId}">Save changes</button>
+                <button type="button" class="js-update-appointment-button btn btn-success" data-appointment-id="${appointment.id}" data-appointment-client="${appointment.clientId}" data-appointment-barber="${appointment.barberId}" data-appointment-name="${appointment.barberName}" data-appointment-name="${appointment.haircut}">Save changes</button>
               </div>
             </div>
           </div>
@@ -184,6 +184,8 @@ export class AppointmentView {
         const appointmentId = button.dataset.appointmentId;
         const clientId = button.dataset.appointmentClient;
         const barberId = button.dataset.appointmentBarber;
+        const barberName = button.dataset.appointmentName;
+        const haircut = button.dataset.appointmentHaircut;
 
         const updateForm = document.querySelector(`.js-update-form-${appointmentId}`)
         
@@ -196,7 +198,9 @@ export class AppointmentView {
 
         const reviewData = {
           clientId,
-          barberId
+          barberId,
+          barberName,
+          haircut
         }
 
         callback(appointmentId, updatedStatus, reviewData);
