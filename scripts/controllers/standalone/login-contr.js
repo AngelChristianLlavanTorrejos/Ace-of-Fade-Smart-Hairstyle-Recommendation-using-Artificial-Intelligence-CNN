@@ -28,7 +28,7 @@ export class LoginContr {
           }
 
           if (result.role === 'Administrator') {
-            location.href = '../../admin-pages/admin-dashboard.html';
+            location.href = '../../admin-pages/appointment.html';
             return;
           }
 

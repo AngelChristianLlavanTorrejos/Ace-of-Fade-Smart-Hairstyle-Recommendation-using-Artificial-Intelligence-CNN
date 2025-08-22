@@ -1,9 +1,11 @@
 import { adminSessionData } from "../../session/admin.js";
 import { loadNavLayout } from "../layouts/navigation-layout.js";
 import { loadHeaderLayout } from "../layouts/header-layout.js"
-import { AppointmentModel } from "../models/appointment-model.js";
-import { AppointmentView } from "../views/appointment-view.js";
-import { AppointmentContr } from "../controllers/appointment-contr.js";
+
+import { HairstyleRecommendationModel } from "../models/hairstyle-recommendation-model.js";
+import { HairstyleRecommendationView } from "../views/hairstyle-recommendation-view.js";
+import { HairstyleRecommendationContr } from "../controllers/hairstlye-recommendation-contr.js"
+
 import { removeSession } from "../general/general-admin/logout.js";
 import { checkSession } from "../general/general-admin/login.js";
 
@@ -12,7 +14,7 @@ await checkSession(adminSessionData);
 await loadNavLayout();
 await loadHeaderLayout(adminSessionData);
 
-const contr = new AppointmentContr(new AppointmentModel(), new AppointmentView());
+const contr = new HairstyleRecommendationContr(new HairstyleRecommendationModel(), new HairstyleRecommendationView());
 
 await contr.init();
 

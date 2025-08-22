@@ -14,27 +14,30 @@
 <body>
   <div class="container-fluid">
     <div class="row vh-100">
-      <div class="col-3 shadow border js-nav-container"></div>
+      <div class="col-3 border js-nav-container"></div>
 
       <div class="col-9 p-0">
-        <div class="shadow py-3 m-3 border rounded px-3 js-header-container"></div>
+        <div class="p-3 m-3 border rounded px-3 js-header-container"></div>
 
-        <div class="shadow border m-3 py-3">
+        <div class="border m-3 py-3">
           <div class="row p-0 m-0 mb-1 align-items-center">
             <div class="col-6">
-              <h6 class="text-secondary m-0">Personal Information</h6>
+              <h6 class="m-0">Personal Information</h6>
             </div>
 
-            <div class="col-6 text-end">
+            <div class="col-6">
 
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#update">
-                <i class="bi bi-pencil-square"></i>
-              </button>
+              <div class="text-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update">             
+                  <i class="bi bi-pencil-square"></i>
+                  <span>Edit Information</span>
+                </button>
+              </div>
 
               <div class="modal fade" id="update" tabindex="-1" aria-labelledby="updateUser" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
-                    <div class="modal-header justify-content-center text-secondary">
+                    <div class="modal-header justify-content-center">
                       <p class="modal-title" id="updateUser">Update Personal Information</p>
                       <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal"
                         aria-label="Close"></button>
@@ -65,17 +68,23 @@
           <div class="px-3 mt-4 text-secondary js-personal-information"></div>
         </div>
 
-        <div class="shadow border m-3 py-3">
-          <div class="row p-0 m-0 mb-1 align-items-center">
-            <h6 class="text-secondary m-0">Change Password</h6>
-          </div>
-
+        <div class="border m-3 py-3">
           <form class="js-password-form">
+            <div class="row p-0 m-0 mb-1 align-items-center">
+              <div class="col-6">
+                <h6 class="text-dark m-0">Change Password</h6>
+              </div>
+              <div class="col-6">
+                <div class="text-end me-3">
+                  <button type="submit" class="btn btn-success w-auto">
+                    <i class="bi bi-lock"></i>
+                    <span>Change Password</span>
+                  </button>
+                </div>
+              </div>
+            </div>
             <div class="px-3 mt-4 text-secondary js-change-password"></div>
             <div class="text-center m-0 js-change-password-res"></div>
-            <div class="text-end me-3">
-              <button type="submit" class="btn btn-success w-auto">Change Password</button>
-            </div>
           </form>
         </div>
 

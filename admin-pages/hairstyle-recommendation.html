@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ace of Fade Smart Hairtstyle Suggestion using Convultional Neural Networks for Facial Feature Matching</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../styles/client-styles/general.css">
-    <link rel="stylesheet" href="../styles/client-styles/recommendation.css">
+    <link rel="stylesheet" href="../styles/client-information.css">
+    <link rel="stylesheet" href="../styles/admin/recommendation.css">
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row vh-100">
-        <!-- Side Navigation -->
-        <div class="col-3 rounded js-nav-container border"></div>
-        <!-- Main Content -->
+      <div class="row">
+        <div class="col-3 rounded border js-nav-container"></div>
+
         <div class="col-9 p-0">
-          <!-- Header -->
-          <div class="py-3 m-3 border rounded px-3 js-header-container"></div>
-          <!-- Haircut Recommendation Tool -->
+          <div class="border p-3 m-3 rounded js-header-container"></div>
+
           <div class="border rounded m-3 p-3">
+
             <h6>Haircut Recommendation Tool</h6>
-            <!-- Guidelines -->
+
             <div class="row">
               <div class="col-6">
                 <p class="m-0">Guidelines</p>
@@ -56,7 +54,7 @@
               </div>
 
             </div>
-            <!-- Capture and Upload Section -->
+
             <div class="text-center p-5 m-5 border rounded shadow-sm js-upload-container">
               <img src="../images/upload-icon.png" class="css-upload-icon js-uploaded-image">
 
@@ -72,6 +70,7 @@
                 <button class="js-upload-button btn btn-success" style="width: 400px;" disabled>Upload File</button>
               </div>
             </div>
+            
             <!-- Camera Stream Section -->
             <div class="text-center js-camera-container p-3 m-3 border shadow-sm rounded" style="display: none;">
               <div class="text-start">
@@ -121,10 +120,12 @@
             </div>
 
           </div>
+
         </div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script type="module" src="../scripts/main/client-main/recommendation-main.js"></script>
+    <script type="module" src="../scripts/main/hairstyle-recommendation-main.js"></script>
   </body>
 </html>

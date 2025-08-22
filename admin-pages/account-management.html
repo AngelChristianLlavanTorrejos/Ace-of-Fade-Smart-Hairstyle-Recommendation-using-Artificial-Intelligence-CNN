@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ace of Fade Smart Hairtstyle Suggestion using Convultional Neural Networks for Facial Feature Matching</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../styles/client-information.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 border rounded js-nav-container"></div>
+
+        <div class="col-9 p-0">
+          <div class="border rounded p-3 m-3 js-header-container"></div>
+
+          <div class="border m-3 py-3">
+            <div class="row p-0 m-0 mb-1 align-items-center">
+              <div class="col-6">
+                <h6 class="m-0">Personal Information</h6>
+              </div>
+
+              <div class="col-6">
+
+                <div class="text-end">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update">             
+                    <i class="bi bi-pencil-square"></i>
+                    <span>Edit Information</span>
+                  </button>
+                </div>
+
+                <div class="modal fade" id="update" tabindex="-1" aria-labelledby="updateUser" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header justify-content-center">
+                        <p class="modal-title" id="updateUser">Update Personal Information</p>
+                        <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                      </div>
+
+                      <form class="js-update-form">
+                        <div class="modal-body">
+                          <div class="row js-update-container"></div>
+
+                          <div class="text-center text-danger m-0 mt-3 js-update-error"></div>
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-success">Save Changes</button>
+                        </div>
+                      </form>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+            <div class="px-3 mt-4 text-secondary js-personal-information"></div>
+          </div>
+
+          <div class="border m-3 py-3">
+            <form class="js-password-form">
+              <div class="row p-0 m-0 mb-1 align-items-center">
+                <div class="col-6">
+                  <h6 class="text-dark m-0">Change Password</h6>
+                </div>
+                <div class="col-6">
+                  <div class="text-end me-3">
+                    <button type="submit" class="btn btn-success w-auto">
+                      <i class="bi bi-lock"></i>
+                      <span>Change Password</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="px-3 mt-4 text-secondary js-change-password"></div>
+              <div class="text-center m-0 js-change-password-res"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="module" src="../scripts/main/account-management-main.js"></script>
+  </body>
+</html>

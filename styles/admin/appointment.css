@@ -1,11 +1,6 @@
 .css-status-list {
   color: rgb(13, 110, 253);
-  transition: color 1s ease;
   cursor: pointer;
-}
-
-.css-status-list:hover {
-  color: rgba(13, 110, 253, 0.25);
 }
 
 .css-appointment-table-head {

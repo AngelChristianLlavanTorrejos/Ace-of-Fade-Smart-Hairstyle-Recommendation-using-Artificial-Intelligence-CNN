@@ -13,24 +13,24 @@
     <div class="container-fluid">
       <div class="row">
         <!-- Side Navigation -->
-        <div class="col-3 shadow-sm vh-100 js-nav-container"></div>
+        <div class="col-3 border rounded js-nav-container"></div>
         <!-- Content -->
         <div class="col-9 p-0">
           <!-- Header -->
-          <div class="shadow-sm py-2 px-3 js-header-container"></div>
+          <div class="rounded p-3 m-3 border js-header-container"></div>
           <!-- Content -->
-          <div class="shadow-sm border m-3 py-3">
+          <div class="border m-3 p-3">
              <!-- Title and Create Barber -->
-            <div class="row p-0 m-0 mb-1 px-3 align-items-center">
-              <div class="col-6 p-0 m-0">
-                <h6 class="text-secondary m-0">Barber Management</h6>
+            <div class="row align-items-center">
+              <div class="col-6">
+                <h6 class=" m-0">Barber Management</h6>
               </div>
-              <div class="col-6 p-0 m-0 text-end">
+              <div class="col-6 text-end">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createBarber">
                   <span>Add Barber <i class="bi bi-scissors"></i></span>
                 </button>
 
-                <div class="modal fade text-secondary" id="createBarber" tabindex="-1" aria-labelledby="createBarberModal" aria-hidden="true">
+                <div class="modal fade" id="createBarber" tabindex="-1" aria-labelledby="createBarberModal" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header align-items-center position-relative">
@@ -54,11 +54,11 @@
               </div>              
             </div>
             <!-- Barbers Table -->
-            <div class="shadow-sm m-3">
-              <table class="table table-bordered text-center text-secondary">
+            <div class="mt-3">
+              <table class="table table-bordered table-hover text-center">
                 <thead class="text-light css-barbers-table-head">
                   <tr>
-                    <th>Id</th>
+                    <th>ID</th>
                     <th>Name</th>
                   </tr>
                 </thead>

@@ -35,6 +35,9 @@ export class AppointmentsContr {
       await this.view.renderAppointmentErrors(errors);
 
       console.log(currentAppointmentData);
+
+      const updatedAppointmentHistory = await this.model.fetchAppointmentsById(this.id);
+      await this.view.renderAppointmentHistory(updatedAppointmentHistory)
     })
 
     const appointmentHistory = await this.model.fetchAppointmentsById(this.id);

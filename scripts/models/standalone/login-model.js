@@ -29,7 +29,13 @@ export class LoginModel {
 
     const authenticatedUser = await res.json();
 
-    localStorage.setItem('client-session', JSON.stringify(authenticatedUser));
+    if (authenticatedUser.role === 'Client') {
+      localStorage.setItem('client-session', JSON.stringify(authenticatedUser));
+    }
+
+    else {
+      localStorage.setItem('admin-session', JSON.stringify(authenticatedUser));
+    }
 
     return authenticatedUser;
   }

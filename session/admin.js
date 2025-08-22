@@ -1,0 +1,1 @@
+export const adminSessionData = JSON.parse(localStorage.getItem('admin-session')) || [];

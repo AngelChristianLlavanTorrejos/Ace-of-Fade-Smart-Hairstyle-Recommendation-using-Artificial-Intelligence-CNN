@@ -185,7 +185,7 @@ export class AppointmentsView {
     this.appointmentHistory.innerHTML = '';
 
     if (appointments.length === 0) {
-      this.appointmentHistory.innerHTML = '<tr><td class="text-danger text-center" colspan="6">No Appointments Found</td></tr>';
+      this.appointmentHistory.innerHTML = '<tr><td class="text-danger text-center" colspan="7">No Appointments Found</td></tr>';
     }
 
     appointments.forEach(appointment => {
@@ -213,7 +213,7 @@ export class AppointmentsView {
         modalTitle.innerText = `Cancel Appointment #${appointmentId}`;
         modalBody.innerHTML = `
           <span class="text-dark">Are you sure you want to cancel your appointment?</span>
-          <span class="text-danger"> Appointment Id ${appointmentId}?</span>
+          <span class="text-light bg-danger p-1 rounded"> Appointment ID No.: ${appointmentId}</span>
           <span class="text-dark">This cannot be undone.</span>
         `;
 

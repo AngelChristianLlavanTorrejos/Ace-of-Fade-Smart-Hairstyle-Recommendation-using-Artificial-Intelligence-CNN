@@ -150,7 +150,7 @@ export class BarberReviewView {
       comment.innerText = 'Comment';
 
       const commentContainer = document.createElement('div');
-      commentContainer.className = 'border p-3';
+      commentContainer.className = 'border p-3 shadow mt-1';
 
       const getDefaultComment = (stars) => {
         switch (stars) {

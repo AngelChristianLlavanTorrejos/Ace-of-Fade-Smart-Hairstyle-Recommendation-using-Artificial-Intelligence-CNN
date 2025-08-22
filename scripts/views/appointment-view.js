@@ -24,9 +24,15 @@ export class AppointmentView {
       li.innerText = item;
       li.addEventListener('click', () => {
         ul.querySelectorAll('li').forEach(li => {
+          li.style.backgroundColor = 'transparent';
           li.style.color = 'rgb(13, 110, 253)';
+          li.style.padding = ''
+          li.style.borderRadius = ''
         })
-        li.style.color = 'rgb(25, 135, 84)';
+        li.style.backgroundColor = 'rgb(25, 135, 84)';
+        li.style.color = 'rgb(248, 249, 250)';
+        li.style.padding = '3px'
+        li.style.borderRadius = '10px'
 
         callback(item);
       })
@@ -40,7 +46,7 @@ export class AppointmentView {
     this.appointmentTable.innerHTML = '';
 
     const table = document.createElement('table');
-    table.className = 'table table-bordered table-sm text-center mt-3';
+    table.className = 'table table-bordered table-hover table-sm text-center mt-3 shadow-sm';
 
     // Table Head
     const thead = document.createElement('thead');
@@ -51,6 +57,7 @@ export class AppointmentView {
     this.tableHeadData.forEach(item => {
       const header = document.createElement('th');
       header.innerText = item;
+      header.className = "align-middle"
 
       headRow.appendChild(header);
     })
@@ -66,16 +73,16 @@ export class AppointmentView {
         cell.innerText = value;
 
         if (value === 'Pending') {
-          cell.className = 'text-warning';
+          cell.className = 'align-middle text-warning';
         }
         else if (value === 'Approved' || value === 'Completed') {
-          cell.className = 'text-success';
+          cell.className = 'align-middle text-success';
         }
         else if (value === 'Cancelled' || value === 'Rejected' || value === 'Notice For Reschedule') {
-          cell.className = 'text-danger';
+          cell.className = 'align-middle text-danger';
         }
         else {
-          cell.className = 'text-dark';
+          cell.className = 'align-middle text-dark';
         }
 
         return cell;
@@ -94,6 +101,7 @@ export class AppointmentView {
         }
 
         const cell = document.createElement('td');
+        cell.className = "align-middle";
         cell.appendChild(button);
         return cell;
       }
@@ -109,8 +117,8 @@ export class AppointmentView {
           date: createCell(appointment.date),
           timeIn: createCell(appointment.timeIn),
           timeOut: createCell(appointment.timeOut),
-          message: createCell(appointment.message ?? "Not Set"),
-          haircut: createCell(appointment.haircut ?? "Not Set"),
+          message: createCell(appointment.message || "Not Set"),
+          haircut: createCell(appointment.haircut || "Not Set"),
           action: createButton(appointment)
         };
 

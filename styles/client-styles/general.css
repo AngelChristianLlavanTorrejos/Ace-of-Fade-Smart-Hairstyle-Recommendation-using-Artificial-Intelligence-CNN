@@ -1,8 +1,10 @@
 .nav-link {
-  transition: color 0.5s ease;
+  transition: 0.5s ease;
   cursor: pointer;
 }
 
 .nav-link:hover {
-  color: rgba(13, 110, 253, 0.5) !important;
+  color: white !important;
+  background-color: rgba(13, 110, 253);
+  border-radius: 50px;
 }

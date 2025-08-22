@@ -1,4 +1,4 @@
-export const clientDashboardView = {
+export const accountManagementView = {
   personalInformation: document.querySelector('.js-personal-information'),
   updateContainer: document.querySelector('.js-update-container'),
   updateForm: document.querySelector('.js-update-form'),
