@@ -157,6 +157,8 @@ export class RecommendationView {
 
     this.faceShapeResult.src = `../images/faceshape/${data.face_shape}.png`;
 
+    console.log(data.face_shape);
+
     this.hairstyleImagesResult.forEach((img, index) => {
       img.src = `../images/hairstyles/${data.face_shape}/${index + 1}.png`
     })
