@@ -35,7 +35,7 @@ export class BarberManagementView {
       this.barbersTableBody.appendChild(row);
 
       row.addEventListener('click', () => {
-        location.href = `barber-information.html?id=${barber.id}`;
+        location.href = `barber-details.html?id=${barber.id}`;
       })
     });
   }
