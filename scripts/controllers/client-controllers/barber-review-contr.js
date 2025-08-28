@@ -10,6 +10,8 @@ export class BarberReviewContr {
     await this.view.renderToReview(toReviewData);
     await this.view.onReview (toReviewData, async (submittedReview) => {
       const result = await this.model.reviewBarber(submittedReview);
+      
+      console.log(submittedReview)
 
       console.log(result);
     })
