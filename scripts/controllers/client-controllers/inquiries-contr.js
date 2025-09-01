@@ -15,6 +15,8 @@ export class InquiriesContr {
     await this.view.createChatRoom(async (isClicked) => {
       if (isClicked) {
         const result = await this.model.createChatRoom(requiredIds);
+
+        location.reload();
         
         if (result) {
           const updatedChatRoomExist = await this.model.isChatRoomExist(requiredIds);
